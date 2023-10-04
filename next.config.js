@@ -1,4 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = nextConfig
+module.exports = {
+    experimental: {
+        appDir: true,
+    },
+    // ...다른 Next.js 설정 옵션...
+};

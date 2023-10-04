@@ -16,12 +16,157 @@
   }
 }
 
+
+/*body {*/
+/*  color: rgb(var(--foreground-rgb));*/
+/*  background: linear-gradient(*/
+/*      to bottom,*/
+/*      transparent,*/
+/*      rgb(var(--background-end-rgb))*/
+/*    )*/
+/*    rgb(var(--background-start-rgb));*/
+/*}*/
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+main {
+  padding: 20px;
+}
+
+.content {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+/* 기본 스타일 설정 */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+/* 헤더 고정 스타일 */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* 다른 요소 위에 렌더링될 수 있도록 높은 z-index 설정 */
+}
+
+/* 푸터 고정 스타일 */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* 다른 요소 위에 렌더링될 수 있도록 높은 z-index 설정 */
+}
+
+/* 메인 컨텐츠 아래에 여백 추가 */
+main {
+  padding: 100px 20px 50px; /* 헤더와 푸터의 높이만큼 여백 추가 */
+}
+
+/* 스마트폰 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+  /* 스마트폰에 대한 스타일 설정 */
+}
+
+/* 태블릿 미디어 쿼리 */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* 태블릿에 대한 스타일 설정 */
+}
+
+/* 데스크톱 미디어 쿼리 */
+@media screen and (min-width: 1025px) {
+  /* 데스크톱에 대한 스타일 설정 */
+}
+
+/*img {*/
+/*  width: 1000px;*/
+/*  height: 500px;*/
+/*  object-fit: cover;*/
+/*}*/
+
+/*게시판 컨테이너 스타일:*/
+.board-container {
+  max-width: 800px; /* 게시판 컨테이너의 최대 너비 */
+  margin: 0 auto 30px; /* 가운데 정렬 */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+/*게시글 스타일:*/
+.post {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.post-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.post-content {
+  margin-top: 10px;
+}
+
+/*게시글 작성 폼 스타일:*/
+.post-form {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.post-form input[type="text"],
+.post-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.post-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+textarea
+{
+  resize: none;
 }
