@@ -1,18 +1,22 @@
 import React from "react";
-import Layout from "@/components/Layout";
+import Layout from "@/components/layout";
+import Link from "next/link";
 
 const Write = () =>{
     return <>
         <Layout>
-            <section className="content">
-                <h2>우리의 서비스</h2>
-                <p>우리는 최고의 서비스를 제공합니다.</p>
-            </section>
-
-            <section className="content">
-                <h2>포트폴리오</h2>
-                <p>우리의 작업을 확인하세요.</p>
-            </section>
+            <div className="board-container">
+                <div className={'flex justify-between'}>
+                    <div>게시물 작성</div>
+                </div>
+                {/* 게시글 작성 폼 */}
+                <div className="post-form">
+                    <h3>게시글 작성</h3>
+                    <input type="text" placeholder="제목" />
+                    <textarea placeholder="내용" ></textarea>
+                    <button>작성하기</button>
+                </div>
+            </div>
         </Layout>
     </>
 }

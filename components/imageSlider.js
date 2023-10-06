@@ -23,19 +23,9 @@ const ImageSlider = ({images}) => {
     };
 
 
-    const divStyle = {
-        color: 'blue',
-        backgroundColor: 'lightgray',
-        padding: '10px',
-        border: '1px solid black',
-        minHeight:'400px',
-        marginBottom:'30px'
-    };
-
-
 
     return (
-        <div style={divStyle} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div className={'custom-swiper-bg'}  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {!loading && <div>loading...</div>}
 
             {loading && (<Swiper
@@ -44,10 +34,9 @@ const ImageSlider = ({images}) => {
                     "disableOnInteraction": false,
                 }}
                 ref={swiperRefLocal}
-                modules={[Autoplay, Mousewheel, Pagination]}
+                modules={[Autoplay, Pagination]}
                 spaceBetween={30}
                 slidesPerView={"auto"}
-                mousewheel={true}
                 pagination={{clickable: true}}
                 loop={true}
             >
