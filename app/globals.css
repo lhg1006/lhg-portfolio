@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "BMHANNAPro";
+  src: url("../public/font/BMHANNAPro.ttf");
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,170 +21,10 @@
   }
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Nunito', sans-serif;
-  background-color: #fff; /* 검정 배경색 */
-  color: #222; /* 흰 글자색 */
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffff;
-  padding: 15px;
-}
-
-.logo a {
-  font-family: 'Nunito', sans-serif;
-  color: #222; /* 흰 글자색 */
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  font-family: 'Nunito', sans-serif;
-}
-
-.nav-links li {
-  margin-right: 20px;
-}
-
-.nav-links a {
-  color: #222; /* 흰 글자색 */
-  text-decoration: none;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #ff5722; /* 링크에 호버 시 색상 변경 */
-}
-
-/* 토글 버튼 스타일 */
-.burger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.line1, .line2, .line3 {
-  width: 25px;
-  height: 3px;
-  background-color: #222; /* 흰색 */
-  margin: 4px 0;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-out {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-}
-
-main {
-  padding: 20px;
-}
-
-.content {
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-
-
-/* 헤더 고정 스타일 */
-header {
-  background-color: #ffffff;
-  color: #333;
-  padding: 20px;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; /* 다른 요소 위에 렌더링될 수 있도록 높은 z-index 설정 */
-}
-
-/* 푸터 고정 스타일 */
-footer {
-  background-color: #ffffff;
-  color: #333;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; /* 다른 요소 위에 렌더링될 수 있도록 높은 z-index 설정 */
-}
-
-/* 메인 컨텐츠 아래에 여백 추가 */
-main {
-  padding: 130px 20px 50px; /* 헤더와 푸터의 높이만큼 여백 추가 */
-}
-
 /* 스마트폰 미디어 쿼리 */
 @media screen and (max-width: 768px) {
   .swiper-slide img{
     min-height: 110px;
-  }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    background-color: #fff;
-    width: 100%;
-    top: 80px;
-    left: 0;
-    text-align: center;
-    z-index: 1;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .burger {
-    display: flex;
-  }
-  /* 네비게이션 바의 초기 스타일 */
-  .nav-links {
-    display: none;
-    animation: fade-out 0.5s ease-in-out; /* 초기에는 페이드 아웃 애니메이션 적용 */
-  }
-
-  /* 버튼 클릭 시 열리는 스타일 */
-  .nav-links.active {
-    display: flex;
-    animation: fade-in 0.5s ease-in-out; /* 열릴 때 페이드 인 애니메이션 적용 */
-  }
-
-  .burger .line1.active,
-  .burger .line2.active,
-  .burger .line3.active {
-    background-color: #fff; /* 햄버거 아이콘을 흰색으로 변경 */
   }
   /* 스마트폰에 대한 스타일 설정 */
 }
@@ -196,63 +41,46 @@ main {
   /* 데스크톱에 대한 스타일 설정 */
 }
 
-/*img {*/
-/*  width: 1000px;*/
-/*  height: 500px;*/
-/*  object-fit: cover;*/
-/*}*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'BMHANNAPro', sans-serif;
+  background-color: #fff; /* 검정 배경색 */
+  color: #222; /* 흰 글자색 */
+}
 
-/*게시판 컨테이너 스타일:*/
-.board-container {
-  max-width: 100%; /* 게시판 컨테이너의 최대 너비 */
-  margin: 0 auto 30px; /* 가운데 정렬 */
+/* 헤더 고정 스타일 */
+header {
+  font-family: 'BMHANNAPro', sans-serif;
+  background-color: #ffffff;
+  color: #333;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* 다른 요소 위에 렌더링될 수 있도록 높은 z-index 설정 */
 }
-/*게시글 스타일:*/
-.post {
+
+/* 푸터 고정 스타일 */
+footer {
+  font-family: 'BMHANNAPro', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  text-align: center;
   padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* 다른 요소 위에 렌더링될 수 있도록 높은 z-index 설정 */
 }
 
-.post-title {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.post-content {
-  margin-top: 10px;
-}
-
-/*게시글 작성 폼 스타일:*/
-.post-form {
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-.post-form input[type="text"],
-.post-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.post-form button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
+/* 메인 컨텐츠 아래에 여백 추가 */
+main {
+  font-family: 'BMHANNAPro', sans-serif;
+  padding: 130px 20px 50px; /* 헤더와 푸터의 높이만큼 여백 추가 */
 }
 
 textarea
@@ -260,6 +88,13 @@ textarea
   resize: none;
 }
 
+.content {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+/* 스와이퍼 */
 .swiper-container {
   width: 100%; /* 스와이퍼 컨테이너를 원하는 크기로 설정 */
   height: 400px; /* 스와이퍼 컨테이너의 높이 설정 */
@@ -273,23 +108,48 @@ textarea
 
 .custom-swiper-bg {
   color: blue;
-  background-color: lightgray;
+  background-color: #ffffff;
   padding: 10px;
-  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
   margin-bottom:30px;
-}
-
-/* 게시물 그리드 스타일 */
-.photo-post-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
-.photo-post {
-  width: calc(33.33% - 10px); /* 각 게시물 사이에 10px 간격을 주기 위해 33.33%로 설정합니다. */
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  padding: 20px;
-  text-align: center;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
 }
+
+.page-item {
+  margin: 3px;
+}
+
+.page-link {
+  display: block;
+  padding: 5px 8px;
+  color: #333;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.page-link:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* 현재 페이지 버튼에 스타일 추가 */
+.pagination .page-item.active .page-link {
+  background-color: #007bff; /* 배경색 설정 */
+  color: #fff; /* 글꼴 색상 설정 */
+}
+

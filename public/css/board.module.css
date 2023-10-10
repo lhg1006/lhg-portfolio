@@ -1,0 +1,51 @@
+/*게시판 컨테이너 스타일:*/
+.boardContainer {
+    max-width: 100%; /* 게시판 컨테이너의 최대 너비 */
+    margin: 0 auto 30px; /* 가운데 정렬 */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+/*게시글 스타일:*/
+.post {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.postTitle {
+    font-size: 18px;
+}
+
+.postContent {
+    margin-top: 10px;
+}
+
+/*게시글 작성 폼 스타일:*/
+.postForm {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.postForm input[type="text"],
+.postForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.postForm button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}

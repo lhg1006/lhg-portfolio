@@ -1,0 +1,133 @@
+/* 네비게이션 바 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px;
+}
+
+.logo a {
+    color: #222; /* 흰 글자색 */
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navLinks {
+    list-style: none;
+    display: flex;
+}
+
+.navLinks li {
+    padding: 5px;
+    margin-right: 20px;
+}
+
+.navLinks div {
+    color: #222;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navLinks div:hover {
+    color: #ff5722; /* 링크에 호버 시 색상 변경 */
+}
+
+/* 토글 버튼 스타일 */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line1, .line2, .line3 {
+    width: 25px;
+    height: 3px;
+    background-color: #222; /* 흰색 */
+    margin: 4px 0;
+}
+
+/* back 버튼 */
+.backButton {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    align-items: center;
+    margin: 0 15px 0 auto;
+}
+
+.backButton svg {
+    width: 28px; /* 원하는 크기로 조절 */
+    height: 28px;
+    margin-right: 5px; /* 아이콘과 텍스트 사이의 간격 조절 */
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* 스마트폰 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+    .navLinks {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        top: 80px;
+        left: 0;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .navLinks.active {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+    /* 네비게이션 바의 초기 스타일 */
+    .navLinks {
+        display: none;
+        animation: fade-out 0.5s ease-in-out; /* 초기에는 페이드 아웃 애니메이션 적용 */
+    }
+
+    /* 버튼 클릭 시 열리는 스타일 */
+    .navLinks.active {
+        display: flex;
+        animation: fade-in 0.5s ease-in-out; /* 열릴 때 페이드 인 애니메이션 적용 */
+    }
+
+    .burger .line1.active,
+    .burger .line2.active,
+    .burger .line3.active {
+        background-color: #fff; /* 햄버거 아이콘을 흰색으로 변경 */
+    }
+    .backButton {
+        display: flex;
+    }
+    /* 스마트폰에 대한 스타일 설정 */
+}

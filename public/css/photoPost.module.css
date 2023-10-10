@@ -1,0 +1,22 @@
+/* 게시물 그리드 스타일 */
+.photoPostGridWrap{
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    padding: 10px;
+    overflow: hidden; /* 페이지네이션 컴포넌트를 요소 내에 유지 */
+}
+.photoPostGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 15px; /* 간격 설정 */
+}
+
+.photoPost {
+    width: calc(33.33% - 10px); /* 각 게시물 사이에 10px 간격을 주기 위해 33.33%로 설정합니다. */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+}

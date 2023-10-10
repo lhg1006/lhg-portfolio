@@ -1,25 +1,39 @@
 // 예시: React 컴포넌트에서 게시판 컨테이너 추가
 'use client'
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import LinkBtn from "@/components/linkBtn";
 import Link from "next/link";
+import LoadingSpinner from "@/components/loadingSpinner";
+import boardCss from "@/public/css/board.module.css"
 
 
-const Board = () =>{
+const Board = () => {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(false);
+    }, [])
+
     return (
-        <div className="board-container">
-            <div className={'flex justify-between'}>
-                <div>게시판</div>
-                <Link href={'/write'}><div>글쓰기</div></Link>
-            </div>
-            {/* 게시글 목록 */}
-            <div className="post">
-                <h3 className="post-title">게시글 제목 1</h3>
-                <p className="post-content">게시글 내용 1</p>
-            </div>
-            <div className="post">
-                <h3 className="post-title">게시글 제목 2</h3>
-                <p className="post-content">게시글 내용 2</p>
-            </div>
+        <div className={boardCss.boardContainer}>
+            {loading && <LoadingSpinner/>}
+
+            {!loading && <>
+                <div className={'flex justify-between'}>
+                    <div>공지사항</div>
+                    <LinkBtn link={'write'} title={'글쓰기'}></LinkBtn>
+                </div>
+                {/* 게시글 목록 */}
+                <div className={boardCss.post}>
+                    <Link href={'/postView'}>
+                        <div className={boardCss.postTitle}>공지사항 1</div>
+                    </Link>
+                </div>
+                <div className={boardCss.post}>
+                    <div className={boardCss.postTitle}>공지사항 2</div>
+                </div>
+            </>
+            }
         </div>
     );
 }

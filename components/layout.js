@@ -3,6 +3,8 @@
 import React, {useEffect, useState} from 'react';
 import Head from "next/head";
 import Link from "next/link";
+import BackButton from "@/components/backButton";
+import navCss from "@/public/css/nav.module.css";
 
 function Layout({children}) {
     const [mounted, setMounted] = useState(false);
@@ -22,24 +24,24 @@ function Layout({children}) {
         <div>
             <Head>
                 <title>반응형 웹사이트</title>
-                <link rel="stylesheet" href="/styles/styles.css"/>
             </Head>
             <header>
-                <nav className={`navbar ${isNavOpen ? 'active' : ''}`}>
-                    <div className="logo">
-                        <a href="#">로고</a>
+                <nav className={`${navCss.navbar} ${isNavOpen ? navCss.active : ''}`}>
+                    <div className={navCss.logo}>
+                        <a>로고</a>
                     </div>
-                    <ul className={`nav-links ${isNavOpen ? 'active' : ''}`}>
-                        <Link href={'/home'}><li><a href="#">홈</a></li></Link>
-                        <Link href={'/service'}><li><a href="#">서비스</a></li></Link>
-                        <Link href={'/portfolio'}><li><a href="#">포트폴리오</a></li></Link>
-                        <Link href={'/blog'}><li><a href="#">블로그</a></li></Link>
-                        <Link href={'/call'}><li><a href="#">연락하기</a></li></Link>
+                    <BackButton/>
+                    <ul className={`${navCss.navLinks} ${isNavOpen ? navCss.active : ''}`}>
+                        <Link href={'/home'}><li><div>홈</div></li></Link>
+                        <Link href={'/service'}><li><div>서비스</div></li></Link>
+                        <Link href={'/portfolio'}><li><div>포트폴리오</div></li></Link>
+                        <Link href={'/blog'}><li><div>블로그</div></li></Link>
+                        <Link href={'/call'}><li><div>연락하기</div></li></Link>
                     </ul>
-                    <div className="burger" onClick={toggleNav}>
-                        <div className="line1"></div>
-                        <div className="line2"></div>
-                        <div className="line3"></div>
+                    <div className={navCss.burger} onClick={toggleNav}>
+                        <div className={navCss.line1}></div>
+                        <div className={navCss.line2}></div>
+                        <div className={navCss.line3}></div>
                     </div>
                 </nav>
             </header>

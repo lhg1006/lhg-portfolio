@@ -2,14 +2,14 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import {Mousewheel, Pagination, Autoplay} from "swiper/modules";
+import {Pagination, Autoplay} from "swiper/modules";
+import LoadingSpinner from "@/components/loadingSpinner";
 
 const ImageSlider = ({images}) => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-
-        setLoading(true);
+        setLoading(false);
     }, [])
 
     const swiperRefLocal = useRef()
@@ -22,13 +22,11 @@ const ImageSlider = ({images}) => {
         swiperRefLocal?.current?.swiper?.autoplay?.start()
     };
 
-
-
     return (
         <div className={'custom-swiper-bg'}  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            {!loading && <div>loading...</div>}
+            {loading && <LoadingSpinner />}
 
-            {loading && (<Swiper
+            {!loading && (<Swiper
                 autoplay={{
                     "delay": 2500,
                     "disableOnInteraction": false,
