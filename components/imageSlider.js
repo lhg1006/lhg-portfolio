@@ -9,7 +9,9 @@ const ImageSlider = ({images}) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setLoading(false);
+        setTimeout(()=>{
+            setLoading(false);
+        },1500)
     }, [])
 
     const swiperRefLocal = useRef()

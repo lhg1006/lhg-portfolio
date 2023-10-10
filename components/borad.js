@@ -11,7 +11,9 @@ const Board = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setLoading(false);
+        setTimeout(()=>{
+            setLoading(false);
+        },1750)
     }, [])
 
     return (
