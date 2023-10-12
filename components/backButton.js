@@ -7,6 +7,7 @@ import navCss from "@/public/css/nav.module.css";
 const BackButton = () => {
     const router = useRouter();
     const pathname = usePathname();
+    const isHome = pathname === '/' || pathname === '/home'
 
     const handleBackClick = () => {
         router.back()
@@ -14,7 +15,7 @@ const BackButton = () => {
 
     return (
         <>
-            {pathname !== '/home' &&
+            {!isHome &&
                 <button className={navCss.backButton} onClick={handleBackClick}>
                     <FontAwesomeIcon icon={faChevronLeft}/>
                 </button>

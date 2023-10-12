@@ -21,7 +21,6 @@
 
 .navLinks li {
     padding: 5px;
-    margin-right: 20px;
 }
 
 .navLinks div {
@@ -57,7 +56,7 @@
     font-size: 1rem;
     cursor: pointer;
     align-items: center;
-    margin: 0 15px 0 auto;
+    margin: 0 0 0 auto;
 }
 
 .backButton svg {
@@ -90,6 +89,15 @@
 
 /* 스마트폰 미디어 쿼리 */
 @media screen and (max-width: 768px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* 3개의 열로 나눔 */
+        align-items: center; /* 수직 가운데 정렬 */
+    }
+
+    .logo {
+    }
+
     .navLinks {
         display: none;
         flex-direction: column;

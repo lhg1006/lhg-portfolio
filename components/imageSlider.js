@@ -9,9 +9,9 @@ const ImageSlider = ({images}) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setTimeout(()=>{
+        setTimeout(() => {
             setLoading(false);
-        },1500)
+        }, 1500)
     }, [])
 
     const swiperRefLocal = useRef()
@@ -25,8 +25,8 @@ const ImageSlider = ({images}) => {
     };
 
     return (
-        <div className={'custom-swiper-bg'}  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            {loading && <LoadingSpinner />}
+        <div className={'custom-swiper-bg'} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            {loading && <LoadingSpinner/>}
 
             {!loading && (<Swiper
                 autoplay={{
@@ -42,7 +42,7 @@ const ImageSlider = ({images}) => {
             >
                 {images.map((image, index) => (
                     <SwiperSlide key={index}>
-                            <img src={image} alt={`Image ${index}`}/>
+                        <img src={image} alt={`Image ${index}`}/>
                     </SwiperSlide>
                 ))}
             </Swiper>)}

@@ -12,7 +12,7 @@ const PostList = ({type}) => {
     const pathname = usePathname();
     const posts = generatePosts();
     const typePost = type === 'main' ? posts.slice(0, 9) : posts
-    const isHome = pathname === '/home'
+    const isHome = pathname === '/' || pathname === '/home'
 
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(9);

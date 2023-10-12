@@ -26,11 +26,19 @@ function Layout({children}) {
                 <title>반응형 웹사이트</title>
             </Head>
             <header>
-                <nav className={`${navCss.navbar} ${isNavOpen ? navCss.active : ''}`}>
+                <nav className={`${navCss.gridContainer} ${navCss.navbar} ${isNavOpen ? navCss.active : ''}`}>
+                    <div className={navCss.burger} onClick={toggleNav}>
+                        <div className={navCss.line1}></div>
+                        <div className={navCss.line2}></div>
+                        <div className={navCss.line3}></div>
+                    </div>
+
                     <div className={navCss.logo}>
                         <a>로고</a>
                     </div>
+
                     <BackButton/>
+
                     <ul className={`${navCss.navLinks} ${isNavOpen ? navCss.active : ''}`}>
                         <Link href={'/home'}><li><div>홈</div></li></Link>
                         <Link href={'/service'}><li><div>서비스</div></li></Link>
@@ -38,11 +46,6 @@ function Layout({children}) {
                         <Link href={'/blog'}><li><div>블로그</div></li></Link>
                         <Link href={'/call'}><li><div>연락하기</div></li></Link>
                     </ul>
-                    <div className={navCss.burger} onClick={toggleNav}>
-                        <div className={navCss.line1}></div>
-                        <div className={navCss.line2}></div>
-                        <div className={navCss.line3}></div>
-                    </div>
                 </nav>
             </header>
 
