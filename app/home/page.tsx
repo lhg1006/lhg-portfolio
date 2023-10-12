@@ -6,10 +6,10 @@ import PostList from "@/components/postList"
 
 const Home = () => {
     const images = [
-        '/images/imageA.jpg',
-        '/images/imageC.jpg',
-        '/images/imageA.jpg',
-        '/images/imageC.jpg',
+        '/images/image1.jpg',
+        '/images/image2.jpg',
+        '/images/image1.jpg',
+        '/images/image2.jpg',
     ];
 
     return (

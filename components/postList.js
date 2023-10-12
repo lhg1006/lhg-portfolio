@@ -7,6 +7,7 @@ import {usePathname} from "next/navigation";
 import pPCss from "@/public/css/photoPost.module.css"
 import Pagination from "@/components/pagenation";
 import LoadingSpinner from "@/components/loadingSpinner";
+import Image from "next/image";
 
 const PostList = ({type}) => {
     const pathname = usePathname();
@@ -50,7 +51,7 @@ const PostList = ({type}) => {
                             {typePost.map((post) => (
                                 <div key={post.id} className={pPCss.photoPost}>
                                     <Link href={'/photoBoardView'}>
-                                        <img src={post.image} alt={`게시물 ${post.id}`}/>
+                                        <img src={post.image} alt={post.id}/>
                                         <h2>{post.title}</h2>
                                     </Link>
                                 </div>

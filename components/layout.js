@@ -40,7 +40,7 @@ function Layout({children}) {
                     <BackButton/>
 
                     <ul className={`${navCss.navLinks} ${isNavOpen ? navCss.active : ''}`}>
-                        <Link href={'/home'}><li><div>홈</div></li></Link>
+                        <Link href={'/'}><li><div>홈</div></li></Link>
                         <Link href={'/service'}><li><div>서비스</div></li></Link>
                         <Link href={'/portfolio'}><li><div>포트폴리오</div></li></Link>
                         <Link href={'/blog'}><li><div>블로그</div></li></Link>
