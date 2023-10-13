@@ -7,13 +7,12 @@ import {usePathname} from "next/navigation";
 import pPCss from "@/public/css/photoPost.module.css"
 import Pagination from "@/components/pagenation";
 import LoadingSpinner from "@/components/loadingSpinner";
-import Image from "next/image";
 
-const PostList = ({type}) => {
+const PostList = () => {
     const pathname = usePathname();
-    const posts = generatePosts();
-    const typePost = type === 'main' ? posts.slice(0, 9) : posts
     const isHome = pathname === '/' || pathname === '/home'
+    const posts = generatePosts();
+    const typePost = isHome ? posts.slice(0, 9) : posts
 
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(9);
@@ -49,10 +48,12 @@ const PostList = ({type}) => {
                         <LinkBtn link={isHome ? '/photoBoard' : 'photoBoardPost'} title={isHome ? '앨범 더보기' : '사진 올리기'}/>
                         <div className={pPCss.photoPostGrid}>
                             {typePost.map((post) => (
-                                <div key={post.id} className={pPCss.photoPost}>
+                                <div key={post.id} className={`${pPCss.photoPost}`}>
                                     <Link href={'/photoBoardView'}>
-                                        <img src={post.image} alt={post.id}/>
-                                        <h2>{post.title}</h2>
+                                        <div className={pPCss.photoBox}>
+                                            <img src={post.image} alt={post.id}/>
+                                        </div>
+                                        <div className={pPCss.title}>{post.title}</div>
                                     </Link>
                                 </div>
                             ))}

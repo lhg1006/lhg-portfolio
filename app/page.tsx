@@ -1,10 +1,9 @@
 'use client'
 import ImageSlider from "@/components/imageSlider";
-import Board from "@/components/borad";
 import Layout from "@/components/layout";
-import PostList from "@/components/postList"
+import Home from "@/app/Home/page";
 
-const Home = () => {
+const Main = () => {
   const images = [
       '/images/image1.jpg',
       '/images/image2.jpg',
@@ -13,10 +12,9 @@ const Home = () => {
   return (
       <Layout>
         <ImageSlider images={images}/>
-        <Board/>
-        <PostList type={'main'}/>
+        <Home />
       </Layout>
   )
 }
 
-export default Home
+export default Main

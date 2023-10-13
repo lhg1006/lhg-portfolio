@@ -6,6 +6,7 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    height: 100%;
 }
 /*게시글 스타일:*/
 .post {
@@ -48,4 +49,12 @@
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
+}
+
+/* 스마트폰 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+    .boardContainer {
+        height: 40%;
+    }
+    /* 스마트폰에 대한 스타일 설정 */
 }
