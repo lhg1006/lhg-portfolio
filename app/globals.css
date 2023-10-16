@@ -175,3 +175,29 @@ textarea
   color: #fff; /* 글꼴 색상 설정 */
 }
 
+.darkModeButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px; /* 버튼 폭 설정 */
+  height: 40px; /* 버튼 높이 설정 */
+  border: none;
+  cursor: pointer;
+  border-radius: 50%; /* 완전한 원 모양 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s; /* 토글 애니메이션에 대한 전체 속성 변환 지정 */
+}
+/* "해" 모드 스타일 */
+.darkModeButton.sun {
+  background-color: #fff; /* 하얀 바탕 */
+  color: #000; /* 검은 아이콘 색상 */
+}
+
+/* "달" 모드 스타일 */
+.darkModeButton.moon {
+  background-color: #000; /* 검은 바탕 */
+  color: #fff; /* 흰 아이콘 색상 */
+}
+

@@ -5,6 +5,9 @@ import Head from "next/head";
 import Link from "next/link";
 import BackButton from "@/components/backButton";
 import navCss from "@/public/css/nav.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+
 
 function Layout({children}) {
     const [mounted, setMounted] = useState(false);
@@ -18,6 +21,12 @@ function Layout({children}) {
 
     const toggleNav = () => {
         setIsNavOpen(!isNavOpen);
+    };
+
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
     };
 
     return ( mounted &&
@@ -53,6 +62,17 @@ function Layout({children}) {
                 {/* 페이지 컨텐츠 */}
                 {children}
             </main>
+
+            <button
+                className={`${isDarkMode ? 'moon' : 'sun'} darkModeButton`}
+                onClick={toggleDarkMode}
+            >
+                {isDarkMode ? (
+                    <FontAwesomeIcon icon={faMoon} />
+                    ) : (
+                    <FontAwesomeIcon icon={faSun} />
+            )}
+            </button>
 
             <footer>
                 <p>&copy; {new Date().getFullYear()} 반응형 웹사이트</p>
