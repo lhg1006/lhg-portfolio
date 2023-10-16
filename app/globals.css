@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "BMHANNAPro";
-  src: url("../public/font/BMHANNAPro.ttf");
+  font-family: "삼립호빵체";
+  src: url("../public/font/SDSamliphopangcheTTFBasic.ttf");
 }
 
 :root {
@@ -23,12 +23,23 @@
 
 /* 스마트폰 미디어 쿼리 */
 @media screen and (max-width: 768px) {
-
+  .custom-swiper-bg{
+    margin: 0 0 30px 0 !important;
+  }
+  .homeGrid{
+    margin: 0 0 0 0 !important;
+  }
   /* 스마트폰에 대한 스타일 설정 */
 }
 
 /* 태블릿 미디어 쿼리 */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+  .custom-swiper-bg{
+    margin: 0 0 30px 0 !important;
+  }
+  .homeGrid{
+    margin: 0 0 0 0 !important;
+  }
 
   /* 태블릿에 대한 스타일 설정 */
 }
@@ -42,14 +53,14 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'BMHANNAPro', sans-serif;
+  font-family: '삼립호빵체', sans-serif;
   background-color: #fff; /* 검정 배경색 */
   color: #222; /* 흰 글자색 */
 }
 
 /* 헤더 고정 스타일 */
 header {
-  font-family: 'BMHANNAPro', sans-serif;
+  font-family: '삼립호빵체', sans-serif;
   background-color: #ffffff;
   color: #333;
   padding: 20px;
@@ -63,21 +74,21 @@ header {
 
 /* 푸터 고정 스타일 */
 footer {
-  font-family: 'BMHANNAPro', sans-serif;
+  font-family: '삼립호빵체', sans-serif;
   background-color: #ffffff;
   color: #333;
   text-align: center;
   padding: 10px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000; /* 다른 요소 위에 렌더링될 수 있도록 높은 z-index 설정 */
+  /*position: fixed;*/
+  /*bottom: 0;*/
+  /*left: 0;*/
+  /*right: 0;*/
+  /*z-index: 1000; !* 다른 요소 위에 렌더링될 수 있도록 높은 z-index 설정 *!*/
 }
 
 /* 메인 컨텐츠 아래에 여백 추가 */
 main {
-  font-family: 'BMHANNAPro', sans-serif;
+  font-family: '삼립호빵체', sans-serif;
   padding: 130px 20px 50px; /* 헤더와 푸터의 높이만큼 여백 추가 */
 }
 
@@ -91,6 +102,9 @@ textarea
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
+}
+.homeGrid{
+  margin: 0 140px 0 140px;
 }
 /* 스와이퍼 */
 .swiper {
@@ -120,10 +134,10 @@ textarea
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-  margin-bottom:30px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 140px 30px 140px;
 }
 
 

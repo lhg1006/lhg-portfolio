@@ -1,20 +1,24 @@
-/*게시판 컨테이너 스타일:*/
+/* 게시판 컨테이너 스타일 */
 .boardContainer {
-    max-width: 100%; /* 게시판 컨테이너의 최대 너비 */
-    margin: 0 auto 30px; /* 가운데 정렬 */
+    max-width: 100%;
+    margin: 0 auto 30px;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 100%;
 }
-/*게시글 스타일:*/
-.post {
+
+/* 게시글 스타일 */
+.post, .postForm {
     padding: 10px;
-    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
+}
+
+.post {
+    margin: 10px 0;
 }
 
 .postTitle {
@@ -25,21 +29,33 @@
     margin-top: 10px;
 }
 
-/*게시글 작성 폼 스타일:*/
+/* 게시글 작성 폼 스타일 */
 .postForm {
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.postForm input[type="text"],
-.postForm textarea {
+.postForm h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.postForm input[type="text"], .postForm textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
+}
+
+.postForm textarea {
+    min-height: 200px;
 }
 
 .postForm button {
@@ -47,7 +63,83 @@
     color: #fff;
     border: none;
     border-radius: 5px;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.postForm button:hover {
+    background-color: #0056b3;
+}
+
+/* 파일 선택 버튼 스타일 */
+.fileInputButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* input[type="file"]를 숨깁니다. */
+.fileInputButton input[type="file"] {
+    display: none;
+}
+
+/* 파일 선택 버튼에 마우스를 올리면 배경 색상 변경 */
+.fileInputButton:hover {
+    background-color: #0056b3;
+}
+
+.postPhotoBox {
+    position: relative; /* 추가 */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #ccc;
+    text-align: center;
+    cursor: pointer;
+}
+
+.postPhotoBox:hover {
+    border-color: #007bff;
+}
+
+.postPhotoBox img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.imageContainer {
+    display: inline-block;
+    position: relative; /* 추가 */
+}
+
+.cancelButton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
     cursor: pointer;
 }
 
