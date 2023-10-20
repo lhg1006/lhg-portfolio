@@ -54,6 +54,8 @@ function Layout({children}) {
                         <Link href={'/portfolio'}><li><div>포트폴리오</div></li></Link>
                         <Link href={'/blog'}><li><div>블로그</div></li></Link>
                         <Link href={'/call'}><li><div>연락하기</div></li></Link>
+
+                        <Link href={'/calendar'}><li><div>일정</div></li></Link>
                     </ul>
                 </nav>
             </header>

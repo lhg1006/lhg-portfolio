@@ -1,0 +1,28 @@
+/* styles.css */
+.fCWrap {
+    /*width: auto;*/
+    /*height: 100%;*/
+    /*display: flex; !* 부모 요소를 플렉스 컨테이너로 설정 *!*/
+    /*flex-direction: column; !* 자식 요소들을 수직으로 배치 *!*/
+    /*justify-content: center; !* 수평 가운데 정렬 *!*/
+    /*align-items: center; !* 수직 가운데 정렬 *!*/
+}
+
+
+.eventContainer {
+    background: white;
+    padding: 5px;
+    border: 1px solid white !important;
+    border-radius: 5px;
+}
+
+.title {
+    /*font-size: 16px;*/
+    color: white;
+}
+
+.description,
+.location {
+    /*font-size: 12px;*/
+    color: black;
+}

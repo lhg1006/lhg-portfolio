@@ -201,3 +201,15 @@ textarea
   color: #fff; /* 흰 아이콘 색상 */
 }
 
+
+/* 스타일 설정 */
+.banner-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+}
