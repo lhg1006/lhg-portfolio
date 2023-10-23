@@ -7,6 +7,7 @@ import {phoneNumberAutoFormat} from "@/util/utils";
 import {changePassword, forgotPassword} from "@/api/call/auth";
 import {toast} from "react-toastify";
 import {useRouter} from "next/navigation";
+import {Modal} from "@/components/modal";
 
 
 const Forgot = () => {
@@ -114,33 +115,35 @@ const Forgot = () => {
               <a className="text-blue-500" href="/login">로그인으로</a>
             </p>
           </form>
+
           {/*비밀번호 변경 모달*/}
-          {/*<Modal open={modalOpen} close={modalClose} header="Change Password">*/}
-          {/*  <div className="mb-3">*/}
-          {/*    <label>Password</label>*/}
-          {/*    <input*/}
-          {/*      type="password"*/}
-          {/*      className="form-control"*/}
-          {/*      placeholder="Enter password"*/}
-          {/*      {...changePwMethods.register("changePassword")}*/}
-          {/*    />*/}
-          {/*    {changePwMethods.formState?.errors?.changePassword ? "※ 6자리 이상 입력해주세요" : ""}*/}
-          {/*  </div>*/}
-          {/*  <div className="mb-3">*/}
-          {/*    <label>Password Confirm</label>*/}
-          {/*    <input*/}
-          {/*      type="password"*/}
-          {/*      className="form-control"*/}
-          {/*      placeholder="Enter password"*/}
-          {/*      {...changePwMethods.register("changeChkPassword")}*/}
-          {/*    />*/}
-          {/*  </div>*/}
-          {/*  <div className="d-grid">*/}
-          {/*    <button type="button" className="btn btn-primary" onClick={changePw}>*/}
-          {/*      Submit*/}
-          {/*    </button>*/}
-          {/*  </div>*/}
-          {/*</Modal>*/}
+          <Modal open={modalOpen} close={modalClose} header="Change Password">
+            <div className="mb-3">
+              <label>Password</label>
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Enter password"
+                {...changePwMethods.register("changePassword")}
+              />
+              {changePwMethods.formState?.errors?.changePassword ? "※ 6자리 이상 입력해주세요" : ""}
+            </div>
+            <div className="mb-3">
+              <label>Password Confirm</label>
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Enter password"
+                {...changePwMethods.register("changeChkPassword")}
+              />
+            </div>
+            <div className="d-grid">
+              <button type="button" className="btn btn-primary" onClick={changePw}>
+                Submit
+              </button>
+            </div>
+          </Modal>
+
         </div>
       </div>
     </>
