@@ -19,6 +19,7 @@
     "@types/node": "20.6.0",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "@hookform/resolvers": "^2.9.10",
     "autoprefixer": "10.4.15",
     "axios": "^1.5.1",
     "eslint": "8.49.0",
@@ -32,7 +33,10 @@
     "react-textarea-autosize": "^8.5.3",
     "swiper": "^10.3.1",
     "tailwindcss": "3.3.3",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "react-toastify": "^9.1.1",
+    "yup": "^0.32.11",
+    "react-hook-form": "^7.41.5"
   },
   "devDependencies": {
     "@types/react-modal": "^3.16.1"

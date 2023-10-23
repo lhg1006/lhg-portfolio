@@ -1,28 +1,31 @@
 'use client'
 import ImageSlider from "@/components/imageSlider";
 import Layout from "@/components/layout";
-import Home from "@/app/Home/page";
+import Home from "@/app/home/page";
 import Modal from 'react-modal';
-
-Modal.setAppElement(document.body);
+import {useEffect} from "react";
 
 const Main = () => {
-  const images = [
-      '/images/image1.jpg',
-      '/images/image2.jpg',
-      '/images/image3.jpg',
-  ];
+    useEffect(() => {
+        Modal.setAppElement(document.body);
+    }, []);
 
-  return (
-      <Layout>
-          <div className="banner-container">
-              <img className="banner" src="/images/image1.jpg" alt="Banner"/>
-          </div>
+    const images = [
+        '/images/image1.jpg',
+        '/images/image2.jpg',
+        '/images/image3.jpg',
+    ];
 
-        <ImageSlider images={images}/>
-        <Home />
-      </Layout>
-  )
+    return (
+        <Layout>
+            {/*<div className="banner-container">*/}
+            {/*    <img className="banner" src="/images/image1.jpg" alt="Banner"/>*/}
+            {/*</div>*/}
+
+            <ImageSlider images={images}/>
+            <Home/>
+        </Layout>
+    )
 }
 
 export default Main

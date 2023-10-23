@@ -43,7 +43,7 @@ function Layout({children}) {
                     </div>
 
                     <div className={navCss.logo}>
-                        <a>로고</a>
+                        <Link href={'/'}><span>로고</span></Link>
                     </div>
 
                     <BackButton/>
@@ -51,11 +51,10 @@ function Layout({children}) {
                     <ul className={`${navCss.navLinks} ${isNavOpen ? navCss.active : ''}`}>
                         <Link href={'/'}><li><div>홈</div></li></Link>
                         <Link href={'/service'}><li><div>서비스</div></li></Link>
-                        <Link href={'/portfolio'}><li><div>포트폴리오</div></li></Link>
                         <Link href={'/blog'}><li><div>블로그</div></li></Link>
                         <Link href={'/call'}><li><div>연락하기</div></li></Link>
-
                         <Link href={'/calendar'}><li><div>일정</div></li></Link>
+                        <Link href={'/login'}><li><div>로그인</div></li></Link>
                     </ul>
                 </nav>
             </header>
