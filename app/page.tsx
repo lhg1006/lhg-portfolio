@@ -1,7 +1,7 @@
 'use client'
 import ImageSlider from "@/components/imageSlider";
 import Layout from "@/components/layout";
-import Home from "@/app/home/page";
+import Home from "@/components/home";
 import Modal from 'react-modal';
 import {useEffect} from "react";
 

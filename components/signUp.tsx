@@ -142,7 +142,7 @@ const SignupPage = () => {
                                 </button>
                             </div>
                             <p className="text-right text-sm">
-                                계정이 있으신가요? <a className="text-blue-500" href="/login"> 로그인으로</a>
+                                계정이 있으신가요? <a className="text-blue-500" href="/auth/login"> 로그인으로</a>
                             </p>
                         </form>
                     </div>

@@ -95,8 +95,8 @@ const Login = () => {
                                 </button>
                             </div>
                             <p className="text-right text-sm">
-                                 <a className="text-blue-500" href="/forgot">비밀번호찾기</a>
-                                <br/><a className="text-blue-500" href="/signUp">회원가입</a>
+                                 <a className="text-blue-500" href="/auth/forgot">비밀번호찾기</a>
+                                <br/><a className="text-blue-500" href="/auth/signUp">회원가입</a>
                             </p>
                         </form>
                     </div>

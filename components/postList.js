@@ -45,11 +45,11 @@ const PostList = () => {
 
                 {!loading &&
                     <>
-                        <LinkBtn link={isHome ? '/photoBoard' : 'photoBoardPost'} title={isHome ? '앨범 더보기' : '사진 올리기'}/>
+                        <LinkBtn link={isHome ? '/board/photoBoard' : '/board/photoBoardPost'} title={isHome ? '앨범 더보기' : '사진 올리기'}/>
                         <div className={pPCss.photoPostGrid}>
                             {typePost.map((post) => (
                                 <div key={post.id} className={`${pPCss.photoPost}`}>
-                                    <Link href={'/photoBoardView'}>
+                                    <Link href={'/board/photoBoard/photoBoardView'}>
                                         <div className={pPCss.photoBox}>
                                             <img src={post.image} alt={post.id}/>
                                         </div>

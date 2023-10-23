@@ -112,7 +112,7 @@ const Forgot = () => {
               </button>
             </div>
             <p className="text-right text-sm">
-              <a className="text-blue-500" href="/login">로그인으로</a>
+              <a className="text-blue-500" href="/auth/login">로그인으로</a>
             </p>
           </form>
 
