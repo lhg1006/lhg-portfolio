@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 
-function Layout({children}) {
+const Layout = ({children, isAdmin} : {children: any; isAdmin: any}) =>{
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -54,7 +54,7 @@ function Layout({children}) {
                         <Link href={'/nav/blog'}><li><div>블로그</div></li></Link>
                         <Link href={'/nav/call'}><li><div>연락하기</div></li></Link>
                         <Link href={'/nav/calendar'}><li><div>일정</div></li></Link>
-                        <Link href={'/auth/login'}><li><div>로그인</div></li></Link>
+                        {isAdmin && <Link href={'/auth/login'}><li><div>로그인</div></li></Link>}
                     </ul>
                 </nav>
             </header>

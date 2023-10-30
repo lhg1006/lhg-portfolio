@@ -1,4 +1,4 @@
-// components/PostList.js
+// components/PostList.tsx
 import React, {useEffect, useState} from 'react';
 import {generatePosts} from '@/util/utils';
 import Link from "next/link";
@@ -8,7 +8,7 @@ import pPCss from "@/public/css/photoPost.module.css"
 import Pagination from "@/components/pagenation";
 import LoadingSpinner from "@/components/loadingSpinner";
 
-const PostList = () => {
+const PostList = ({isAdmin} : {isAdmin:boolean}) => {
     const pathname = usePathname();
     const isHome = pathname === '/' || pathname === '/home'
     const posts = generatePosts();
@@ -30,7 +30,7 @@ const PostList = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    const paginate = (pageNumber) => {
+    const paginate = (pageNumber : number) => {
         // 페이지 변경을 처리할 함수 호출
         setCurrentPage(pageNumber)
 
@@ -45,9 +45,12 @@ const PostList = () => {
 
                 {!loading &&
                     <>
-                        <LinkBtn link={isHome ? '/board/photoBoard' : '/board/photoBoardPost'} title={isHome ? '앨범 더보기' : '사진 올리기'}/>
-                        <div className={pPCss.photoPostGrid}>
-                            {typePost.map((post) => (
+                        {isHome ?
+                            <LinkBtn link={'/board/photoBoard'}  title={'앨범 더보기'}/> :
+                            (isAdmin && <LinkBtn link={'/board/photoBoardPost'}  title={'사진 올리기'}/>)
+                        }
+                        <div className={`${pPCss.photoPostGrid}`}>
+                            {typePost.map((post : {id:any; title:string; image:string}) => (
                                 <div key={post.id} className={`${pPCss.photoPost}`}>
                                     <Link href={'/board/photoBoard/photoBoardView'}>
                                         <div className={pPCss.photoBox}>

@@ -4,8 +4,11 @@ import Layout from "@/components/layout";
 import Home from "@/components/home";
 import Modal from 'react-modal';
 import {useEffect} from "react";
-
+import { useSearchParams } from "next/navigation";
 const Main = () => {
+    const searchParams  = useSearchParams();
+    const isAdmin = searchParams.get('admin') === 'asd'
+
     useEffect(() => {
         Modal.setAppElement(document.body);
     }, []);
@@ -17,13 +20,13 @@ const Main = () => {
     ];
 
     return (
-        <Layout>
+        <Layout isAdmin={isAdmin}>
             {/*<div className="banner-container">*/}
             {/*    <img className="banner" src="/images/image1.jpg" alt="Banner"/>*/}
             {/*</div>*/}
 
             <ImageSlider images={images}/>
-            <Home/>
+            <Home isAdmin={isAdmin}/>
         </Layout>
     )
 }

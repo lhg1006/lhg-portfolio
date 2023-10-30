@@ -97,6 +97,10 @@ textarea
   resize: none;
 }
 
+.hidden{
+  display: none !important;
+}
+
 .content {
   background-color: #fff;
   padding: 20px;

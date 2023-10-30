@@ -7,7 +7,7 @@ import LoadingSpinner from "@/components/loadingSpinner";
 import boardCss from "@/public/css/board.module.css"
 
 
-const Board = () => {
+const Board = ({isAdmin} : {isAdmin:boolean}) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const Board = () => {
             {!loading && <>
                 <div className={'flex justify-between'}>
                     <div>공지사항</div>
-                    <LinkBtn link={'write'} title={'글쓰기'}></LinkBtn>
+                    {isAdmin && <LinkBtn link={'write'} title={'글쓰기'}></LinkBtn>}
                 </div>
                 {/* 게시글 목록 */}
                 <div className={boardCss.post}>
