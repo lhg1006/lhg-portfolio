@@ -20,7 +20,7 @@ const Write = () => {
     };
 
     return <>
-        <Layout>
+        <Layout isAdmin={false}>
             <div className={boardCss.postForm}>
                 <h3 className={'mb-5 text-xl'}>공지사항 작성</h3>
                 <input type="text" placeholder="제목"/>

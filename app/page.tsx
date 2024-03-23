@@ -5,29 +5,29 @@ import Home from "@/components/home";
 import Modal from 'react-modal';
 import {useEffect} from "react";
 import { useSearchParams } from "next/navigation";
+import MainBanner from "@/components/mainBanner";
+import ParallaxCompo from "@/components/parallaxCompo";
 const Main = () => {
     const searchParams  = useSearchParams();
-    const isAdmin = searchParams.get('admin') === 'asd'
+    const isAdmin = searchParams.get('admin') === 'hyoraaa'
 
     useEffect(() => {
         Modal.setAppElement(document.body);
     }, []);
 
     const images = [
-        '/images/image1.jpg',
+        '/images/tap-banner.jpg',
         '/images/image2.jpg',
         '/images/image3.jpg',
     ];
 
     return (
-        <Layout isAdmin={isAdmin}>
-            {/*<div className="banner-container">*/}
-            {/*    <img className="banner" src="/images/image1.jpg" alt="Banner"/>*/}
-            {/*</div>*/}
-
-            <ImageSlider images={images}/>
-            <Home isAdmin={isAdmin}/>
-        </Layout>
+        // <ParallaxCompo />
+         <Layout isAdmin={isAdmin}>
+             {/*<MainBanner/>*/}
+             <ImageSlider images={images}/>
+             <Home isAdmin={isAdmin}/>
+         </Layout>
     )
 }
 

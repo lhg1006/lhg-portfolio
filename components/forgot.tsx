@@ -4,7 +4,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import {ChangePwInputs, ForgotInputs} from "@/types/loginDataType";
 import {phoneNumberAutoFormat} from "@/util/utils";
-import {changePassword, forgotPassword} from "@/api/call/auth";
+import {changePassword, forgotPassword} from "@/app/api/call/auth";
 import {toast} from "react-toastify";
 import {useRouter} from "next/navigation";
 import {Modal} from "@/components/modal";

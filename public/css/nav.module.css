@@ -7,11 +7,9 @@
     padding: 15px;
 }
 
-.logo a {
-    color: #222; /* 흰 글자색 */
-    text-decoration: none;
-    font-size: 28px;
-    font-weight: bold;
+.logo img {
+    background-size: cover;
+    width: 100px;
 }
 
 .navLinks {
@@ -95,7 +93,8 @@
         align-items: center; /* 수직 가운데 정렬 */
     }
 
-    .logo {
+    .logo{
+     justify-self: center;
     }
 
     .navLinks {
@@ -111,6 +110,7 @@
     }
 
     .navLinks.active {
+        margin-top: 50px;
         display: flex;
     }
 
@@ -138,4 +138,13 @@
         display: flex;
     }
     /* 스마트폰에 대한 스타일 설정 */
+}
+
+@media screen and (min-width: 1025px) {
+    .navLinks {
+        margin-right: 83px;
+    }
+    .logo img {
+        margin-left: 90px;
+    }
 }

@@ -1,13 +1,13 @@
 import Layout from "@/components/layout";
 import React from "react";
 
-const Blog = () =>{
+const ViewPage = () =>{
 
     return <>
-        <Layout>
-
+        <Layout isAdmin={false}>
+            <div></div>
         </Layout>
     </>
 }
 
-export default Blog
+export default ViewPage

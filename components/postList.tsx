@@ -46,7 +46,7 @@ const PostList = ({isAdmin} : {isAdmin:boolean}) => {
                 {!loading &&
                     <>
                         {isHome ?
-                            <LinkBtn link={'/board/photoBoard'}  title={'앨범 더보기'}/> :
+                            <LinkBtn link={'/board/project'}  title={'더보기'}/> :
                             (isAdmin && <LinkBtn link={'/board/photoBoardPost'}  title={'사진 올리기'}/>)
                         }
                         <div className={`${pPCss.photoPostGrid}`}>

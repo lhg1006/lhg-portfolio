@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup"
-import {login} from "@/api/call/auth";
+import {login} from "@/app/api/call/auth";
 import {LoginInputs} from "@/types/loginDataType";
 import {toast} from "react-toastify";
 import {addLocalStorageItem, delLocalStorageItem, getCookie, getLocalStorageItem} from "@/util/utils";

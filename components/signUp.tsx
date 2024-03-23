@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {SignUpInputs} from "@/types/loginDataType";
-import {confirmEmailDuplication, signUp} from "@/api/call/auth";
+import {confirmEmailDuplication, signUp} from "@/app/api/call/auth";
 import {getCookie, phoneNumberAutoFormat} from "@/util/utils";
 import {toast} from "react-toastify";
 import {signUpSchema} from "@/schema/signUp";

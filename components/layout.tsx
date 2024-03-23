@@ -32,7 +32,7 @@ const Layout = ({children, isAdmin} : {children: any; isAdmin: any}) =>{
     return ( mounted &&
         <div>
             <Head>
-                <title>반응형 웹사이트</title>
+                <title>이효규 포트폴리오</title>
             </Head>
             <header>
                 <nav className={`${navCss.gridContainer} ${navCss.navbar} ${isNavOpen ? navCss.active : ''}`}>
@@ -43,18 +43,18 @@ const Layout = ({children, isAdmin} : {children: any; isAdmin: any}) =>{
                     </div>
 
                     <div className={navCss.logo}>
-                        <Link href={'/'}><span>로고</span></Link>
+                        <Link href={'/'}><img src='/images/pflogo.png' className={navCss.logoIco}></img></Link>
                     </div>
 
                     <BackButton/>
 
                     <ul className={`${navCss.navLinks} ${isNavOpen ? navCss.active : ''}`}>
                         <Link href={'/'}><li><div>홈</div></li></Link>
-                        <Link href={'/nav/service'}><li><div>서비스</div></li></Link>
-                        <Link href={'/nav/blog'}><li><div>블로그</div></li></Link>
-                        <Link href={'/nav/call'}><li><div>연락하기</div></li></Link>
-                        <Link href={'/nav/calendar'}><li><div>일정</div></li></Link>
-                        {isAdmin && <Link href={'/auth/login'}><li><div>로그인</div></li></Link>}
+                        <Link href={'/board/resume'}><li><div>이력서</div></li></Link>
+                        <Link href={'/board/project'}><li><div>프로젝트</div></li></Link>
+                        <Link href={'/board/career'}><li><div>경력기술서</div></li></Link>
+                        {/*<Link href={'/nav/calendar'}><li><div>일정</div></li></Link>*/}
+                        {/*{isAdmin && <Link href={'/auth/login'}><li><div>로그인</div></li></Link>}*/}
                     </ul>
                 </nav>
             </header>
@@ -76,7 +76,10 @@ const Layout = ({children, isAdmin} : {children: any; isAdmin: any}) =>{
             </button>
 
             <footer>
-                <p>&copy; {new Date().getFullYear()} 반응형 웹사이트</p>
+                <p>이효규 포트폴리오</p>
+                <p>H.P 010-8649-9668</p>
+                <p>EMAIL lhg961006@gmail.com</p>
+                <p>&copy; {new Date().getFullYear()} design by lhg1006</p>
             </footer>
         </div>
     );

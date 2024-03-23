@@ -17,6 +17,10 @@
     background-color: #f9f9f9;
 }
 
+.postText {
+    color: #000000a6;
+}
+
 .post {
     margin: 10px 0;
 }

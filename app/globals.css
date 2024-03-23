@@ -24,7 +24,7 @@
 /* 스마트폰 미디어 쿼리 */
 @media screen and (max-width: 768px) {
   .custom-swiper-bg{
-    margin: 0 0 30px 0 !important;
+    margin: 55px 0 30px 0 !important;
   }
   .homeGrid{
     margin: 0 0 0 0 !important;
@@ -35,7 +35,7 @@
 /* 태블릿 미디어 쿼리 */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .custom-swiper-bg{
-    margin: 0 0 30px 0 !important;
+    margin: 55px 0 30px 0 !important;
   }
   .homeGrid{
     margin: 0 0 0 0 !important;
@@ -46,13 +46,15 @@
 
 /* 데스크톱 미디어 쿼리 */
 @media screen and (min-width: 1025px) {
-
+body{
+  padding-left: 100px;
+  padding-right: 100px;
+}
   /* 데스크톱에 대한 스타일 설정 */
 }
 
 body {
   margin: 0;
-  padding: 0;
   font-family: '삼립호빵체', sans-serif;
   background-color: #fff; /* 검정 배경색 */
   color: #222; /* 흰 글자색 */
@@ -79,7 +81,7 @@ footer {
   color: #333;
   text-align: center;
   padding: 10px;
-  position: fixed;
+  /*position: fixed;*/
   bottom: 0;
   left: 0;
   right: 0;
@@ -103,45 +105,28 @@ textarea
 
 .content {
   background-color: #fff;
-  padding: 20px;
+  /*padding: 20px;*/
   margin-bottom: 20px;
   border-radius: 5px;
 }
 .homeGrid{
-  margin: 0 140px 0 140px;
+  /*margin: 0 140px 0 140px;*/
 }
 /* 스와이퍼 */
-.swiper {
-  max-width: 1550px;
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-container {
-  width: 100%; /* 스와이퍼 컨테이너를 원하는 크기로 설정 */
-  height: 100%; /* 스와이퍼 컨테이너의 높이 설정 */
-}
-
-.swiper-slide img {
-  width: 100%; /* 이미지를 스와이퍼 슬라이드의 너비에 맞게 설정 */
-  height: 100%; /* 이미지의 높이를 자동으로 조정 */
-  object-fit: cover;
-  /*background-color:#dddddd;*/
-  /*background-repeat : no-repeat;*/
-  /*background-size : cover;*/
-  /*background-position : 50% 50%;*/
-}
 
 .custom-swiper-bg {
-  color: blue;
-  background-color: #ffffff;
-  padding: 10px;
+  width: 100%; /* 부모 요소의 너비에 맞게 조절 */
+  height: 300px; /* 높이를 자동으로 조절하여 비율 유지 */
+  margin-bottom: 30px;
+  margin-top: 55px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 140px 30px 140px;
+
+  .swiper-slide img {
+    border-radius: 10px;
+    width: 100%; /* 이미지 너비를 100%로 조절 */
+    height: 300px; /* 이미지 높이를 자동으로 조절하여 비율 유지 */
+  }
 }
 
 
@@ -216,4 +201,5 @@ textarea
 .banner {
   width: 100%;
   height: auto;
+  margin-bottom: 30px;
 }
