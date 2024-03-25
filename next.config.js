@@ -3,7 +3,7 @@ module.exports = {
       return [
           {
               source : '/:path*',
-              destination : 'http://localhost:6066/:path*'
+              destination : `${process.env.NEXT_PUBLIC_LOCAL_URL}/:path*`
           }
       ]
     },

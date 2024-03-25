@@ -71,7 +71,7 @@ const Write = () => {
     return (
         <>
             <Layout>
-                <div className={boardCss.boardContainer}>
+                <div className={boardCss.formContainer}>
                     <div className={boardCss.postForm}>
                         <h3 className={"mb-5 text-xl"}>작성</h3>
                         <input type="text" placeholder="제목" />
