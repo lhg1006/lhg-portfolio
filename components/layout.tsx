@@ -7,9 +7,15 @@ import BackButton from "@/components/backButton";
 import navCss from "@/public/css/nav.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import {useSearchParams} from "next/navigation";
 
 
-const Layout = ({children, isAdmin} : {children: any; isAdmin: any}) =>{
+const Layout = ({children} : {children: any;}) =>{
+    const searchParams  = useSearchParams();
+    const isAdmin = searchParams.get('admin') === 'leehyogyu'
+
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -29,7 +35,7 @@ const Layout = ({children, isAdmin} : {children: any; isAdmin: any}) =>{
         setIsDarkMode(!isDarkMode);
     };
 
-    return ( mounted &&
+    return( mounted &&
         <div>
             <Head>
                 <title>이효규 포트폴리오</title>
@@ -53,12 +59,12 @@ const Layout = ({children, isAdmin} : {children: any; isAdmin: any}) =>{
                         <Link href={'/board/resume'}><li><div>이력서</div></li></Link>
                         <Link href={'/board/project'}><li><div>프로젝트</div></li></Link>
                         <Link href={'/board/career'}><li><div>경력기술서</div></li></Link>
-                        {/*<Link href={'/nav/calendar'}><li><div>일정</div></li></Link>*/}
                         {isAdmin && <Link href={'/auth/login'}><li><div>로그인</div></li></Link>}
+                        {/*<Link href={'/nav/calendar'}><li><div>일정</div></li></Link>*/}
                     </ul>
                 </nav>
             </header>
-
+            <ToastContainer autoClose={1500}/>
             <main>
                 {/* 페이지 컨텐츠 */}
                 {children}

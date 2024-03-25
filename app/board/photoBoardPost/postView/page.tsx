@@ -3,7 +3,7 @@ import React from "react";
 
 const Page = () =>{
     return <>
-        <Layout isAdmin={false}>    
+        <Layout>
             <div></div>
         </Layout>
     </>

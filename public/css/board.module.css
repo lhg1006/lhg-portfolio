@@ -1,15 +1,13 @@
-/* 게시판 컨테이너 스타일 */
 .boardContainer {
     max-width: 100%;
-    margin: 0 auto 30px;
+    margin: 50px auto 30px;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 100%;
+    text-align-last: center;
 }
 
-/* 게시글 스타일 */
 .post, .postForm {
     padding: 10px;
     border: 1px solid #ccc;
@@ -22,7 +20,7 @@
 }
 
 .post {
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 .postTitle {
@@ -33,7 +31,6 @@
     margin-top: 10px;
 }
 
-/* 게시글 작성 폼 스타일 */
 .postForm {
     padding: 20px;
     border: 1px solid #e6e6e6;
@@ -50,7 +47,7 @@
 }
 
 .postForm input[type="text"], .postForm textarea {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -77,7 +74,6 @@
     background-color: #0056b3;
 }
 
-/* 파일 선택 버튼 스타일 */
 .fileInputButton {
     background-color: #007bff;
     color: #fff;
@@ -88,18 +84,16 @@
     font-weight: bold;
 }
 
-/* input[type="file"]를 숨깁니다. */
 .fileInputButton input[type="file"] {
     display: none;
 }
 
-/* 파일 선택 버튼에 마우스를 올리면 배경 색상 변경 */
 .fileInputButton:hover {
     background-color: #0056b3;
 }
 
 .postPhotoBox {
-    position: relative; /* 추가 */
+    position: relative;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -130,7 +124,7 @@
 
 .imageContainer {
     display: inline-block;
-    position: relative; /* 추가 */
+    position: relative;
 }
 
 .cancelButton {
@@ -146,11 +140,19 @@
     font-size: 12px;
     cursor: pointer;
 }
+.submitButton {
+    align-items: center;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    margin-top: 30px;
+}
 
-/* 스마트폰 미디어 쿼리 */
-@media screen and (max-width: 768px) {
-    .boardContainer {
-        height: 40%;
-    }
-    /* 스마트폰에 대한 스타일 설정 */
+.submitButton:hover {
+    background-color: #218838;
 }

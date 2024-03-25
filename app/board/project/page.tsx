@@ -7,9 +7,9 @@ import PostList from "@/components/postList";
 const ProjectPage = () =>{
     const isAdmin = true
     return <>
-        <Layout isAdmin={false}>
+        <Layout>
             <div style={{marginTop:"50px"}}>
-                <PostList isAdmin={isAdmin}/>
+                <PostList/>
             </div>
         </Layout>
     </>
