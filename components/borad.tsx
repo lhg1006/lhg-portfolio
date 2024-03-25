@@ -7,13 +7,12 @@ import LoadingSpinner from "@/components/loadingSpinner";
 import boardCss from "@/public/css/board.module.css"
 
 
-const Board = ({isAdmin} : {isAdmin:boolean}) => {
+const Board = () => {
     const [loading, setLoading] = useState(true);
+    const isAdmin = true
 
     useEffect(() => {
-        setTimeout(()=>{
-            setLoading(false);
-        },1750)
+        setLoading(false);
     }, [])
 
     return (
@@ -23,7 +22,6 @@ const Board = ({isAdmin} : {isAdmin:boolean}) => {
             {!loading && <>
                 <div className={'flex justify-between'}>
                     <div>인적사항</div>
-                    {isAdmin && <LinkBtn link={'write'} title={'글쓰기'}></LinkBtn>}
                 </div>
                 {/* 인적사항 */}
                 <div className={boardCss.post}>
@@ -48,7 +46,6 @@ const Board = ({isAdmin} : {isAdmin:boolean}) => {
 
                 <div className={'flex justify-between'}>
                     <div>학력</div>
-                    {isAdmin && <LinkBtn link={'write'} title={'글쓰기'}></LinkBtn>}
                 </div>
                 {/* 학력 */}
                 <div className={boardCss.post}>
@@ -64,7 +61,6 @@ const Board = ({isAdmin} : {isAdmin:boolean}) => {
 
                 <div className={'flex justify-between'}>
                     <div>경력 (업무 경험 총 1년 8개월)</div>
-                    {isAdmin && <LinkBtn link={'write'} title={'글쓰기'}></LinkBtn>}
                 </div>
                 {/* 경력 */}
                 <div className={boardCss.post}>
@@ -77,7 +73,6 @@ const Board = ({isAdmin} : {isAdmin:boolean}) => {
 
                 <div className={'flex justify-between'}>
                     <div>개발 언어</div>
-                    {isAdmin && <LinkBtn link={'write'} title={'글쓰기'}></LinkBtn>}
                 </div>
                 {/* 개발 언어 */}
                 <div className={boardCss.post}>
@@ -99,7 +94,6 @@ const Board = ({isAdmin} : {isAdmin:boolean}) => {
 
                 <div className={'flex justify-between'}>
                     <div>수상</div>
-                    {isAdmin && <LinkBtn link={'write'} title={'글쓰기'}></LinkBtn>}
                 </div>
                 {/* 수상 */}
                 <div className={boardCss.post}>
@@ -112,7 +106,6 @@ const Board = ({isAdmin} : {isAdmin:boolean}) => {
 
                 <div className={'flex justify-between'}>
                     <div>자기소개</div>
-                    {isAdmin && <LinkBtn link={'write'} title={'글쓰기'}></LinkBtn>}
                 </div>
                 {/* 자기소개 */}
                 <div className={boardCss.post}>

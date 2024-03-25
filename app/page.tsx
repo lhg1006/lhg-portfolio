@@ -9,7 +9,7 @@ import MainBanner from "@/components/mainBanner";
 import ParallaxCompo from "@/components/parallaxCompo";
 const Main = () => {
     const searchParams  = useSearchParams();
-    const isAdmin = searchParams.get('admin') === 'hyoraaa'
+    const isAdmin = searchParams.get('admin') === 'leehyogyu'
 
     useEffect(() => {
         Modal.setAppElement(document.body);
@@ -17,8 +17,8 @@ const Main = () => {
 
     const images = [
         '/images/tap-banner.jpg',
-        '/images/image2.jpg',
-        '/images/image3.jpg',
+        // '/images/image2.jpg',
+        // '/images/image3.jpg',
     ];
 
     return (
@@ -26,7 +26,7 @@ const Main = () => {
          <Layout isAdmin={isAdmin}>
              {/*<MainBanner/>*/}
              <ImageSlider images={images}/>
-             <Home isAdmin={isAdmin}/>
+             <Home/>
          </Layout>
     )
 }

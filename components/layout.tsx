@@ -54,7 +54,7 @@ const Layout = ({children, isAdmin} : {children: any; isAdmin: any}) =>{
                         <Link href={'/board/project'}><li><div>프로젝트</div></li></Link>
                         <Link href={'/board/career'}><li><div>경력기술서</div></li></Link>
                         {/*<Link href={'/nav/calendar'}><li><div>일정</div></li></Link>*/}
-                        {/*{isAdmin && <Link href={'/auth/login'}><li><div>로그인</div></li></Link>}*/}
+                        {isAdmin && <Link href={'/auth/login'}><li><div>로그인</div></li></Link>}
                     </ul>
                 </nav>
             </header>

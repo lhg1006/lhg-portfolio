@@ -5,10 +5,11 @@ import React from "react";
 import PostList from "@/components/postList";
 
 const ProjectPage = () =>{
+    const isAdmin = true
     return <>
         <Layout isAdmin={false}>
             <div style={{marginTop:"50px"}}>
-                <PostList isAdmin={false}/>
+                <PostList isAdmin={isAdmin}/>
             </div>
         </Layout>
     </>

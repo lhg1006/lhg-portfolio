@@ -21,30 +21,32 @@ const Write = () => {
 
     return <>
         <Layout isAdmin={false}>
-            <div className={boardCss.postForm}>
-                <h3 className={'mb-5 text-xl'}>공지사항 작성</h3>
-                <input type="text" placeholder="제목"/>
-                <div className={'mb-5'}>
-                    <label className={boardCss.fileInputButton}>
-                        파일 선택
-                        <input type="file" accept="image/*" onChange={handleImageChange}/>
-                    </label>
+            <div style={{marginTop: '60px'}}>
+                <div className={boardCss.postForm}>
+                    <h3 className={'mb-5 text-xl'}>작성</h3>
+                    <input type="text" placeholder="제목"/>
+                    <div className={'mb-5'}>
+                        <label className={boardCss.fileInputButton}>
+                            파일 선택
+                            <input type="file" accept="image/*" onChange={handleImageChange}/>
+                        </label>
+                    </div>
+                    {uploadedImage && (
+                        <>
+                            <div className={boardCss.imageContainer}>
+                                <div className={boardCss.postPhotoBox}
+                                     style={{backgroundImage: `url(${uploadedImage})`,}}
+                                />
+                                <div className={boardCss.cancelButton}>X</div>
+                            </div>
+                        </>
+                    )}
+                    <textarea
+                        className={'text-xl'}
+                        placeholder="내용"
+                    ></textarea>
+                    <button>작성하기</button>
                 </div>
-                {uploadedImage && (
-                    <>
-                        <div className={boardCss.imageContainer}>
-                            <div className={boardCss.postPhotoBox}
-                                 style={{backgroundImage: `url(${uploadedImage})`,}}
-                            />
-                            <div className={boardCss.cancelButton}>X</div>
-                        </div>
-                    </>
-                )}
-                <textarea
-                    className={'text-xl'}
-                    placeholder="내용"
-                ></textarea>
-                <button>작성하기</button>
             </div>
         </Layout>
     </>
