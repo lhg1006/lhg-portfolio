@@ -1,6 +1,6 @@
 // components/PostList.tsx
 import React, {useEffect, useState} from 'react';
-import {generatePosts} from '@/util/utils';
+import {generatePosts, getCookie} from '@/util/utils';
 import Link from "next/link";
 import LinkBtn from "@/components/linkBtn";
 import {usePathname} from "next/navigation";
@@ -19,7 +19,7 @@ const PostList = () => {
 
     const [loading, setLoading] = useState(true);
 
-    const isAdmin = true
+    const isAdmin = getCookie("isAdmin")
 
     useEffect(() => {
         setLoading(false);

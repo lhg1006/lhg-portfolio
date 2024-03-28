@@ -34,3 +34,9 @@ export type CareerResType = {
         careerData:CareerDataType[]
     }
 }
+
+export type ProjectUploadDataType = {
+    title: string | undefined;
+    images: string[] | null;
+    texts: string[];
+}

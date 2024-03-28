@@ -5,21 +5,13 @@ import boardCss from "@/public/css/board.module.css";
 import { PrevImgList } from "@/types/photoType";
 import { imageUpload } from "@/app/api/call/photo";
 import { toast } from "react-toastify";
+import {ProjectUploadDataType} from "@/types/apiResultType";
+import {projectUpload} from "@/app/api/call/portfolio";
 
 const Write = () => {
-    interface ImageData {
-        imagePath: string;
-    }
-
-    interface Content {
-        title: string | undefined;
-        images: ImageData[] | null;
-        texts: string[];
-    }
-
     // const MAX_FILE_COUNT = 5;
     const titleRef = useRef<HTMLInputElement | null>(null)
-    const photoBaseUrl = process.env.REACT_APP_PHOTO_URL;
+    const photoBaseUrl = process.env.NEXT_PUBLIC_PHOTO_URL
     const [contentList, setContentList] = useState<
         Array<{ image: PrevImgList | null; text: string }>
     >([{ image: null, text: "" }]);
@@ -91,26 +83,30 @@ const Write = () => {
 
     const addPost = () => {
         // 이미지와 텍스트 값을 담을 배열 초기화
-        const images: ImageData[] = [];
+        const images: string[] = [];
         const texts: string[] = [];
 
         // contentList를 순회하며 이미지와 텍스트를 추출
         contentList.forEach(content => {
             if (content.image) {
-                images.push(content.image);
+                images.push(content.image.imagePath);
             }
             if (content.text) {
                 texts.push(content.text);
             }
         });
 
-        const postData : Content = {
+        const param : ProjectUploadDataType = {
             title: titleRef.current?.value,
             images: images,
             texts: texts,
         };
 
-        console.log(postData)
+        console.log(param)
+
+        projectUpload(param).then((res)=>{
+            console.log(res.data)
+        })
     };
 
     return (
@@ -136,7 +132,7 @@ const Write = () => {
                                     {content.image && (
                                         <div className={boardCss.imageContainer}>
                                             <div className={boardCss.prevPhotoBox}>
-                                                <img src={process.env.NEXT_PUBLIC_PHOTO_URL + content.image.imagePath} alt={'prevImg'}/>
+                                                <img src={content.image.imageUrl} alt={'prevImg'}/>
                                             </div>
                                             <div className={boardCss.cancelButton} onClick={() => handleDeleteImage(index)}>X</div>
                                         </div>
