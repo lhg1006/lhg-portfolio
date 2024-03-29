@@ -1,5 +1,10 @@
 import axios from "axios";
-import {CareerResType, ProjectUploadDataType, ResumeResType} from "@/types/apiResultType";
+import {
+    CareerResType,
+    ProjectUploadDataType,
+    ResumeResType,
+    SingleProjectResType
+} from "@/types/apiResultType";
 import {LoginInputs} from "@/types/loginDataType";
 
 const instance = axios.create({
@@ -11,6 +16,10 @@ export const getResumeData = async () : Promise<ResumeResType> => {
 
 export const getCareerData = async () : Promise<CareerResType> => {
     return await instance.get(`/career`)
+}
+
+export const getSingleProjectData = async (data : string) : Promise<SingleProjectResType> => {
+    return await instance.get(`/project/data/single?projectId=${data}`)
 }
 
 export const loginAuth = async (data: LoginInputs) => {

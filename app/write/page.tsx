@@ -7,14 +7,24 @@ import { imageUpload } from "@/app/api/call/photo";
 import { toast } from "react-toastify";
 import {ProjectUploadDataType} from "@/types/apiResultType";
 import {projectUpload} from "@/app/api/call/portfolio";
+import ConfirmModal from "@/components/confirmModal";
+import {useRouter} from "next/navigation";
 
 const Write = () => {
     // const MAX_FILE_COUNT = 5;
+    const router = useRouter();
     const titleRef = useRef<HTMLInputElement | null>(null)
     const photoBaseUrl = process.env.NEXT_PUBLIC_PHOTO_URL
     const [contentList, setContentList] = useState<
         Array<{ image: PrevImgList | null; text: string }>
     >([{ image: null, text: "" }]);
+    const [projectParam, setProjectParam] = useState<ProjectUploadDataType>({
+        title: "",
+        images: [],
+        texts: []
+    })
+
+    const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
     // 파일 선택 및 이미지 변경 이벤트 핸들러
     const handleChangeFile = (e: any, index: number) => {
@@ -81,7 +91,43 @@ const Write = () => {
         ]);
     };
 
-    const addPost = () => {
+    const addPost = () => { // 실제 데이터 저장 실행
+        projectUpload(projectParam).then((res)=>{
+            const {data} = res
+
+            if(data === 1){
+                toast.success('성공 : 정상적으로 처리되었습니다.')
+                router.push('/board/project');
+            }else if(data === 99){
+                toast.error('실패 : 입력 값을 확인해 주세요.')
+            }else{
+                toast.error('실패 : 서버와의 통신이 원활하지 않습니다.')
+            }
+        })
+    };
+
+    const handleConfirm = () => {
+        addPost(); // 저장 실행
+        setModalIsOpen(false); // 모달 닫기
+        setProjectParam({title:"", images: [], texts: []})
+    };
+
+    const handleClose = () => {
+        setModalIsOpen(false); // 모달 닫기
+        setProjectParam({title:"", images: [], texts: []})
+    };
+
+    const handleAddPostButtonClick = () => {
+        setModalIsOpen(true); // 모달 열기
+    };
+
+
+    const submitButton = () => {
+        let available = false
+        let errorText = ""
+
+        const title = titleRef.current?.value
+
         // 이미지와 텍스트 값을 담을 배열 초기화
         const images: string[] = [];
         const texts: string[] = [];
@@ -95,19 +141,26 @@ const Write = () => {
                 texts.push(content.text);
             }
         });
+        // set param
+        setProjectParam({title:title, images: images, texts: texts})
 
-        const param : ProjectUploadDataType = {
-            title: titleRef.current?.value,
-            images: images,
-            texts: texts,
-        };
+        if(title !== "" && texts[0] !== undefined){
+            available = true
+        }
 
-        console.log(param)
+        if(title === ""){
+            errorText = "제목을 입력해 주세요."
+        }else if(texts[0] === undefined){
+            errorText = "첫번째 항목의 내용은 필수 입니다."
+        }
+        
+        if(available){
+            handleAddPostButtonClick()
+        }else{
+            toast.error(errorText);
+        }
 
-        projectUpload(param).then((res)=>{
-            console.log(res.data)
-        })
-    };
+    }
 
     return (
         <>
@@ -152,7 +205,13 @@ const Write = () => {
                         ))}
                         <button onClick={addContent}>추가하기</button>
                     </div>
-                    <button onClick={addPost} className={boardCss.submitButton}>작성하기</button>
+                    <button onClick={submitButton} className={boardCss.submitButton}>작성하기</button>
+                    <ConfirmModal
+                        isOpen={modalIsOpen}
+                        onClose={handleClose}
+                        onConfirm={handleConfirm}
+                        message="포스트를 추가하시겠습니까?"
+                    />
                 </div>
             </Layout>
         </>

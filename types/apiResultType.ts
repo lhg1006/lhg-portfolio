@@ -40,3 +40,13 @@ export type ProjectUploadDataType = {
     images: string[] | null;
     texts: string[];
 }
+
+export type SingleProjectResType = {
+    data: SingleProjectDataType
+}
+
+export type SingleProjectDataType = {
+    title: string
+    images: string[];
+    texts: string[];
+}

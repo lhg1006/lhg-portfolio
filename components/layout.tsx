@@ -66,6 +66,8 @@ const Layout = ({children} : {children: any;}) =>{
             </header>
             <ToastContainer autoClose={1500}/>
             <main>
+                {/* 모달을 위한 루트 요소 */}
+                <div id="modal-root"></div>
                 {/* 페이지 컨텐츠 */}
                 {children}
             </main>

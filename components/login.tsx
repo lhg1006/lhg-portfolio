@@ -14,7 +14,7 @@ const Login = () => {
 
     useEffect(() => {
         if (isLogin) {
-            window.location.replace("/main")
+            window.location.replace("/")
         }
 
         if (remember != undefined) {

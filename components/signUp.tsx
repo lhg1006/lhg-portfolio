@@ -58,7 +58,7 @@ const SignupPage = () => {
 
     useEffect(() => {
         if (isLogin) {
-            window.location.replace('/main')
+            window.location.replace('/')
         }
     }, [])
     return (
