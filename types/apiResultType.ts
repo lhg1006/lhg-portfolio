@@ -41,12 +41,21 @@ export type ProjectUploadDataType = {
     texts: string[];
 }
 
+export type ProjectDataCountResType = {
+    data: number
+}
+
+export type ProjectDataResType = {
+    data: SingleProjectDataType[]
+}
+
 export type SingleProjectResType = {
     data: SingleProjectDataType
 }
 
 export type SingleProjectDataType = {
-    title: string
+    autoNo: number;
+    title: string;
     images: string[];
     texts: string[];
 }

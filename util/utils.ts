@@ -45,3 +45,25 @@ export const delLocalStorageItem = (iName : string) => {
 export const getLocalStorageItem = (iName : string) => {
     return window.localStorage.getItem(iName)
 }
+
+// 이미지가 정사각형인지를 비동기적으로 확인하는 유틸리티 함수 *미사용 .. 우선 만들어 둠
+export const isImageSquare = async (imageUrl : string) =>{
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+
+        img.src = imageUrl;
+
+        img.onload = () => {
+            const width = img.width;
+            const height = img.height;
+
+            const isSquare = width === height;
+
+            resolve(isSquare);
+        };
+
+        img.onerror = (error) => {
+            reject(error);
+        };
+    });
+}

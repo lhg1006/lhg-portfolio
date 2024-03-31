@@ -7,22 +7,36 @@ import {usePathname} from "next/navigation";
 import pPCss from "@/public/css/photoPost.module.css"
 import Pagination from "@/components/pagenation";
 import LoadingSpinner from "@/components/loadingSpinner";
+import {getProjectData, getProjectDataCount} from "@/app/api/call/portfolio";
+import {ProjectDataResType, SingleProjectDataType} from "@/types/apiResultType";
 
 const PostList = () => {
     const pathname = usePathname();
     const isHome = pathname === '/' || pathname === '/home'
+    const isAdmin = getCookie("isAdmin")
+
     const posts = generatePosts();
     const typePost = isHome ? posts.slice(0, 9) : posts
 
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(4);
-
+    const [totalCnt, setTotalCnt] = useState<number>(0);
+    const [projectData, setProjectData] = useState<SingleProjectDataType[]>([])
     const [loading, setLoading] = useState(true);
 
-    const isAdmin = getCookie("isAdmin")
+    const photoUrl = process.env.NEXT_PUBLIC_PHOTO_URL
 
     useEffect(() => {
-        setLoading(false);
+        getProjectDataCount().then((res)=>{
+            console.log(res)
+            setTotalCnt(res.data)
+        })
+
+        getProjectData(1).then((res)=>{
+            console.log(res)
+            setLoading(false);
+            setProjectData(res.data)
+        })
     }, [])
 
     // 스크롤 이벤트 핸들러
@@ -50,25 +64,26 @@ const PostList = () => {
                             (isAdmin && <LinkBtn link={`/write`} title={'등록하기'}/>)
                         }
                         <div className={`${pPCss.photoPostGrid}`}>
-                            {typePost.map((post : {id:any; title:string; image:string}) => (
-                                <div key={post.id} className={`${pPCss.photoPost}`}>
-                                    <Link href={'/board/project/view'}>
+                            {projectData.map((data) => (
+                                <div key={data.autoNo} className={`${pPCss.photoPost}`}>
+                                    <Link href={`/board/project/view?projectId=${data.autoNo}`}>
                                         <div className={pPCss.photoBox}>
-                                            <img src={post.image} alt={post.id}/>
+                                            {/* 0번째 인덱스의 이미지 */}
+                                            <img src={photoUrl+data.images[0]} alt={`Main Image`} />
                                         </div>
-                                        <div className={pPCss.title}>{post.title}</div>
+                                        <div className={pPCss.title}>{data.title}</div>
                                     </Link>
                                 </div>
                             ))}
                         </div>
-                        {!isHome && <Pagination
-                            totalPosts={11} // 게시물 총 수
-                            postsPerPage={postsPerPage}
-                            currentPage={currentPage}
-                            paginate={paginate}
-                        />}
                     </>}
             </div>
+            {!isHome && <Pagination
+                totalPosts={totalCnt} // 게시물 총 수
+                postsPerPage={postsPerPage}
+                currentPage={currentPage}
+                paginate={paginate}
+            />}
         </>
     );
 };

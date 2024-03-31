@@ -1,6 +1,6 @@
 import axios from "axios";
 import {
-    CareerResType,
+    CareerResType, ProjectDataCountResType, ProjectDataResType,
     ProjectUploadDataType,
     ResumeResType,
     SingleProjectResType
@@ -16,6 +16,14 @@ export const getResumeData = async () : Promise<ResumeResType> => {
 
 export const getCareerData = async () : Promise<CareerResType> => {
     return await instance.get(`/career`)
+}
+
+export const getProjectDataCount = async () : Promise<ProjectDataCountResType> => {
+    return await instance.get(`/project/data/count`)
+}
+
+export const getProjectData = async (data : number) : Promise<ProjectDataResType> => {
+    return await instance.get(`/project/data?pageNo=${data}`)
 }
 
 export const getSingleProjectData = async (data : string) : Promise<SingleProjectResType> => {

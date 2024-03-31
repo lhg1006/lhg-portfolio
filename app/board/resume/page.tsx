@@ -30,8 +30,8 @@ const ResumePage = () => {
     }, []);
 
     return (
-        <Layout isAdmin={false}>
-            <div style={{marginTop: '60px'}}>
+        <Layout>
+            <div>
                 {loading && <LoadingSpinner/>}
                 {!loading &&
                     <div id={"contents"}>

@@ -19,8 +19,8 @@ const CareerPage = () =>{
     }, []);
 
     return <>
-        <Layout isAdmin={false}>
-            <div style={{marginTop:'60px'}}>
+        <Layout>
+            <div>
                 {loading && <LoadingSpinner/>}
                 {!loading && careerData.map((career, index) => (
                     <div key={index} style={{marginBottom:'40px'}}>
