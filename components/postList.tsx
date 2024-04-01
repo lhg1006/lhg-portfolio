@@ -8,7 +8,7 @@ import pPCss from "@/public/css/photoPost.module.css"
 import Pagination from "@/components/pagenation";
 import LoadingSpinner from "@/components/loadingSpinner";
 import {getProjectData, getProjectDataCount} from "@/app/api/call/portfolio";
-import {ProjectDataResType, SingleProjectDataType} from "@/types/apiResultType";
+import {SingleProjectDataType} from "@/types/apiResultType";
 
 const PostList = () => {
     const pathname = usePathname();
@@ -32,12 +32,12 @@ const PostList = () => {
             setTotalCnt(res.data)
         })
 
-        getProjectData(1).then((res)=>{
+        getProjectData(currentPage).then((res)=>{
             console.log(res)
             setLoading(false);
             setProjectData(res.data)
         })
-    }, [])
+    }, [currentPage])
 
     // 스크롤 이벤트 핸들러
     const scrollToTop = () => {
@@ -46,7 +46,7 @@ const PostList = () => {
 
     const paginate = (pageNumber : number) => {
         // 페이지 변경을 처리할 함수 호출
-        setCurrentPage(pageNumber)
+        setCurrentPage(pageNumber++)
 
         // 스크롤 이벤트 핸들러 호출
         scrollToTop();
@@ -67,8 +67,7 @@ const PostList = () => {
                             {projectData.map((data) => (
                                 <div key={data.autoNo} className={`${pPCss.photoPost}`}>
                                     <Link href={`/board/project/view?projectId=${data.autoNo}`}>
-                                        <div className={pPCss.photoBox}>
-                                            {/* 0번째 인덱스의 이미지 */}
+                                        <div className={`${pPCss.photoBox} ${isHome ? pPCss.homePhotoBox : ''}`}>
                                             <img src={photoUrl+data.images[0]} alt={`Main Image`} />
                                         </div>
                                         <div className={pPCss.title}>{data.title}</div>

@@ -95,10 +95,10 @@ const Login = () => {
                                         Submit
                                     </button>
                                 </div>
-                                <p className="text-right text-sm">
-                                    <a className="text-blue-500" href="/auth/forgot">비밀번호찾기</a>
-                                    <br/><a className="text-blue-500" href="/auth/signUp">회원가입</a>
-                                </p>
+                                {/*<p className="text-right text-sm">*/}
+                                {/*    <a className="text-blue-500" href="/auth/forgot">비밀번호찾기</a>*/}
+                                {/*    <br/><a className="text-blue-500" href="/auth/signUp">회원가입</a>*/}
+                                {/*</p>*/}
                             </form>
                         </div>
                     </div>

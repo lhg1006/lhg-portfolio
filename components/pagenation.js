@@ -18,7 +18,7 @@ const Pagination = ({ totalPosts, postsPerPage, currentPage, paginate }) => {
         const maxPageNumbers = 5; // 한 번에 표시할 페이지 수
         const middlePage = Math.ceil(maxPageNumbers / 2);
         const startPage =
-            currentPage > middlePage ? currentPage - middlePage + 1 : 1;
+            currentPage > middlePage ? currentPage - middlePage : 1;
         const endPage = Math.min(startPage + maxPageNumbers - 1, totalPages);
 
         return (
@@ -29,12 +29,6 @@ const Pagination = ({ totalPosts, postsPerPage, currentPage, paginate }) => {
                 >
                     <a className="page-link">&lt;&lt;</a>
                 </li>
-                <li
-                    onClick={() => paginate(currentPage - 1)}
-                    className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}
-                >
-                    <a className="page-link">&lt;</a>
-                </li>
                 {pageNumbers.slice(startPage - 1, endPage).map((number) => (
                     <li
                         key={number}
@@ -44,12 +38,6 @@ const Pagination = ({ totalPosts, postsPerPage, currentPage, paginate }) => {
                         <a className="page-link">{number}</a>
                     </li>
                 ))}
-                <li
-                    onClick={() => paginate(currentPage + 1)}
-                    className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}
-                >
-                    <a className="page-link">&gt;</a>
-                </li>
                 <li
                     onClick={() => paginate(totalPages)}
                     className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}

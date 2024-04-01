@@ -203,3 +203,15 @@ textarea
   height: auto;
   margin-bottom: 30px;
 }
+
+.github-back-link-btn{
+  color: cadetblue;
+}
+
+.github-front-link-btn{
+  color: hotpink;
+}
+
+.github-photo-link-btn{
+  color: darkorange;
+}

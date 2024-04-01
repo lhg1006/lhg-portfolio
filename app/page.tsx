@@ -12,9 +12,9 @@ const Main = () => {
     }, []);
 
     const images = [
-        '/images/tap-banner.jpg',
-        // '/images/image2.jpg',
-        // '/images/image3.jpg',
+        '/images/banner_1.png',
+        '/images/banner_2.png',
+        '/images/banner_3.png',
     ];
 
     return (

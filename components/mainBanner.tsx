@@ -1,7 +1,7 @@
 const MainBanner = () => {
     return(
         <div className="banner-container">
-            <img className="banner" src="/images/imageA.jpg" alt="Banner"/>
+            {/*<img className="banner" src="/images/imageA.jpg" alt="Banner"/>*/}
         </div>
     )
 }

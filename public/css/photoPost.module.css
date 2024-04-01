@@ -8,7 +8,7 @@
 .photoPostGrid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 13px;
 }
 
@@ -50,14 +50,44 @@
     object-fit: cover;
 }
 
+
+@media screen and (min-width: 425px) {
+    .photoBox{
+        min-width: 240px;
+        min-height: 240px;
+        max-width: 240px;
+        max-height: 240px;
+    }
+}
 /* 스마트폰 미디어 쿼리 */
 @media screen and (max-width: 768px) {
     .photoPost {
         width: calc(100% - 10px); /* 스마트폰에서는 한 줄에 한 개의 카드만 보이도록 설정 */
     }
 }
+
 @media screen and (min-width: 768px) {
     .photoPostGridWrap{
-        height: 600px;
+        height: 900px;
+    }
+
+    .photoPost {
+        width: calc(40% - 10px);
+    }
+
+    .photoBox{
+        min-width: 270px;
+        min-height: 270px;
+        max-width: 270px;
+        max-height: 270px;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .homePhotoBox{
+        min-width: 200px;
+        min-height: 200px;
+        max-width: 200px;
+        max-height: 200px;
     }
 }
