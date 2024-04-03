@@ -15,6 +15,7 @@ import {useSearchParams} from "next/navigation";
 const Layout = ({children} : {children: any;}) =>{
     const searchParams  = useSearchParams();
     const isAdmin = searchParams.get('admin') === 'leehyogyu'
+    const logoURL = `${process.env.NEXT_PUBLIC_PHOTO_URL}/api/photo/imagePath/-2024-04-03-/65c33285-ed86-4c56-aa28-7bb9c0df7319_pflogo.png`
 
     const [mounted, setMounted] = useState(false);
 
@@ -49,7 +50,7 @@ const Layout = ({children} : {children: any;}) =>{
                     </div>
 
                     <div className={navCss.logo}>
-                        <Link href={'/'}><img src='/images/pflogo.png' className={navCss.logoIco}></img></Link>
+                        <Link href={'/'}><img src={logoURL} className={navCss.logoIco}></img></Link>
                     </div>
 
                     <BackButton/>
