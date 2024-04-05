@@ -43,3 +43,4 @@ setting.json
 .idea
 .vscode
 .env
+/.env

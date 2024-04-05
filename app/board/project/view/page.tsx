@@ -20,7 +20,6 @@ const ViewPage = () =>{
 
     useEffect(()=>{
         getSingleProjectData(projectId).then((res)=>{
-            console.log(res)
             const {autoNo, title, images, texts} = res.data
             setSingleData({autoNo, title, images, texts})
         })

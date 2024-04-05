@@ -28,12 +28,10 @@ const PostList = () => {
 
     useEffect(() => {
         getProjectDataCount().then((res)=>{
-            console.log(res)
             setTotalCnt(res.data)
         })
 
         getProjectData(currentPage).then((res)=>{
-            console.log(res)
             setLoading(false);
             setProjectData(res.data)
         })

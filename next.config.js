@@ -10,5 +10,6 @@ module.exports = {
     experimental: {
         appDir: true,
     },
+    output: 'standalone'
     // ...다른 Next.js 설정 옵션...
 };
