@@ -9,21 +9,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import {useSearchParams} from "next/navigation";
+import {useRouter, useSearchParams} from "next/navigation";
 
 
 const Layout = ({children} : {children: any;}) =>{
+    const router = useRouter()
+    useEffect(() => {
+        const myDomain = "lhg1006.store";
+        const currentDomain = window.location.hostname;
+
+        if (currentDomain !== myDomain) {
+            router.push("/notfound");
+        }else{
+            setMounted(true);
+        }
+    }, [router]);
+
     const searchParams  = useSearchParams();
     const isAdmin = searchParams.get('admin') === 'leehyogyu'
     const logoURL = `${process.env.NEXT_PUBLIC_PHOTO_URL}/api/photo/imagePath/-2024-04-03-/65c33285-ed86-4c56-aa28-7bb9c0df7319_pflogo.png`
 
     const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-
     const [isNavOpen, setIsNavOpen] = useState(false);
 
     const toggleNav = () => {

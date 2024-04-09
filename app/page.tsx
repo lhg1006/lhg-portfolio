@@ -6,7 +6,6 @@ import Modal from 'react-modal';
 import React, {useEffect} from "react";
 
 const Main = () => {
-
     useEffect(() => {
         Modal.setAppElement(document.body);
     }, []);
