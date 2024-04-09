@@ -15,7 +15,7 @@ import {useRouter, useSearchParams} from "next/navigation";
 const Layout = ({children} : {children: any;}) =>{
     const router = useRouter()
     useEffect(() => {
-        const myDomain = "lhg1006.store";
+        const myDomain = process.env.NEXT_PUBLIC_MY_DOMAIN;
         const currentDomain = window.location.hostname;
 
         if (currentDomain !== myDomain) {
