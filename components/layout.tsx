@@ -19,7 +19,7 @@ const Layout = ({children} : {children: any;}) =>{
         const currentDomain = window.location.hostname;
 
         if (currentDomain !== myDomain) {
-            router.push("/notfound");
+            router.push("/badrequest");
         }else{
             setMounted(true);
         }
@@ -92,7 +92,6 @@ const Layout = ({children} : {children: any;}) =>{
 
             <footer>
                 <p>이효규 포트폴리오</p>
-                <p>H.P 010-8649-9668</p>
                 <p>EMAIL lhg961006@gmail.com</p>
                 <p>&copy; {new Date().getFullYear()} design by lhg1006</p>
             </footer>
