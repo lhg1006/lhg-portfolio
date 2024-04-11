@@ -24,7 +24,7 @@ const PostList = () => {
     const [projectData, setProjectData] = useState<SingleProjectDataType[]>([])
     const [loading, setLoading] = useState(true);
 
-    const photoUrl = process.env.NEXT_PUBLIC_PHOTO_URL
+    // const photoUrl = process.env.NEXT_PUBLIC_PHOTO_URL
 
     useEffect(() => {
         getProjectDataCount().then((res)=>{
@@ -66,7 +66,7 @@ const PostList = () => {
                                 <div key={data.autoNo} className={`${pPCss.photoPost}`}>
                                     <Link href={`/board/project/view?projectId=${data.autoNo}`}>
                                         <div className={`${pPCss.photoBox} ${isHome ? pPCss.homePhotoBox : ''}`}>
-                                            <img src={photoUrl+data.images[0]} alt={`Main Image`} />
+                                            <img src={data.images[0]} alt={`Main Image`} />
                                         </div>
                                         <div className={pPCss.title}>{data.title}</div>
                                     </Link>

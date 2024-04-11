@@ -15,19 +15,23 @@ import {useRouter, useSearchParams} from "next/navigation";
 const Layout = ({children} : {children: any;}) =>{
     const router = useRouter()
     useEffect(() => {
+        const myIp = process.env.NEXT_PUBLIC_MY_IP;
         const myDomain = process.env.NEXT_PUBLIC_MY_DOMAIN;
+        const subDomain = process.env.NEXT_PUBLIC_MY_SUB_DOMAIN;
         const currentDomain = window.location.hostname;
 
-        if (currentDomain !== myDomain) {
-            router.push("/badrequest");
-        }else{
+        if (currentDomain === myIp ||
+            currentDomain === myDomain ||
+            currentDomain === subDomain) {
             setMounted(true);
+        }else{
+            router.push("/badrequest");
         }
     }, [router]);
 
     const searchParams  = useSearchParams();
     const isAdmin = searchParams.get('admin') === 'leehyogyu'
-    const logoURL = `${process.env.NEXT_PUBLIC_PHOTO_URL}/api/photo/imagePath/-2024-04-03-/65c33285-ed86-4c56-aa28-7bb9c0df7319_pflogo.png`
+    const logoURL = `/api/photo/imagePath/-2024-04-11-/94294670-92a5-40e8-8ae4-05460eb47de4_pflogo.png`
 
     const [mounted, setMounted] = useState(false);
     const [isNavOpen, setIsNavOpen] = useState(false);

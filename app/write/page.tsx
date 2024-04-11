@@ -14,7 +14,7 @@ const Write = () => {
     // const MAX_FILE_COUNT = 5;
     const router = useRouter();
     const titleRef = useRef<HTMLInputElement | null>(null)
-    const photoBaseUrl = process.env.NEXT_PUBLIC_PHOTO_URL
+    // const photoBaseUrl = process.env.NEXT_PUBLIC_PHOTO_URL
     const [contentList, setContentList] = useState<
         Array<{ image: PrevImgList | null; text: string }>
     >([{ image: null, text: "" }]);
@@ -51,7 +51,7 @@ const Write = () => {
             .then((res) => {
                 const result = {
                     imagePath: res.data.imageData[0].imagePath,
-                    imageUrl: photoBaseUrl + res.data.imageData[0].imageUrl,
+                    imageUrl: res.data.imageData[0].imageUrl,
                     fileName: res.data.imageData[0].imageName,
                 };
                 const updatedContentList = [...contentList];
