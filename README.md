@@ -5,6 +5,9 @@
 
 ### 이 프로젝트는 Next.js를 사용하여 개발되었습니다.
 
+### backend link 
+
+https://github.com/lhg1006/api-server
 
 ### 버전 정보
 
