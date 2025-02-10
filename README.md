@@ -9,7 +9,6 @@
 Next.js와 TypeScript를 기반으로 개발된 개인 포트폴리오 웹사이트입니다. 모던하고 반응형 디자인을 적용하여 사용자 경험을 최적화했습니다.
 
 ### 🔗 관련 링크
-- [배포된 웹사이트](https://lhg1006.github.io/)
 - [백엔드 Repository](https://github.com/lhg1006/api-server)
 
 ## 🛠 기술 스택
